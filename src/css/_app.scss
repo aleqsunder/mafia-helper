@@ -1,0 +1,229 @@
+body {
+  margin: 0 auto;
+  max-width: 1000px;
+  background-color: $background;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mafia-helper {
+  display: flex;
+  margin: 2rem 0;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  &__list {
+    flex: 5;
+
+    &-button {
+      display: inline-flex;
+      border-radius: .6rem;
+      border: 1px solid $light-blue;
+      padding: 0.6rem 1rem;
+      color: $dark;
+      background-color: white;
+      cursor: pointer;
+
+      & ~ & {
+        margin-left: 10px;
+      }
+
+      svg {
+        min-width: 20px;
+        margin-right: .6rem;
+      }
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      &__title {
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+    }
+
+    &-role {
+      &-name {
+        max-width: 150px;
+      }
+      &-max {
+        max-width: 50px;
+      }
+      &-func {
+        width: 1rem;
+        text-align: end;
+        cursor: pointer;
+      }
+    }
+
+    input {
+      border: 1px solid $light-blue;
+      padding: .6rem;
+      border-radius: .6rem;
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  &__table {
+    border-spacing: 0;
+
+    thead th {
+      border-bottom: 2px solid $light-blue;
+      font-size: 14px;
+      text-align: left;
+      padding: 1rem 1.6rem;
+    }
+
+    tbody {
+      &:before {
+        content: '';
+        display: block;
+        height: 1rem;
+      }
+
+      tr {
+        td {
+          padding: .6rem 1rem;
+          transition: all .15s;
+
+          &:first-child {
+            border-top-left-radius: .6rem;
+            border-bottom-left-radius: .6rem;
+          }
+
+          &:last-child {
+            border-top-right-radius: .6rem;
+            border-bottom-right-radius: .6rem;
+          }
+        }
+
+        &:hover td {
+          background-color: white;
+        }
+
+        &:first-child td {
+          margin-top: .6rem;
+        }
+      }
+    }
+  }
+
+  &__info-sidebar {
+    flex: 2;
+    border-left: 2px solid $light-blue;
+
+    &-block {
+      margin-bottom: .6rem;
+    }
+  }
+}
+
+.wrapper {
+  color: #000;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.custom-rotate-transition {
+  &-enter-from {
+    transform: rotate(10deg);
+    opacity: 0;
+  }
+
+  &-leave-to {
+    transform: rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+.custom-from-bottom-transition {
+  &-enter-from {
+    transform: translate(0, 10%);
+    opacity: 0;
+  }
+
+  &-leave-to {
+    transform: translate(0, -10%);
+    opacity: 0;
+  }
+}
+
+.g-dialog-content--fullscreen {
+  .wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+.game-box {
+  display: flex;
+
+  &__info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+
+      &-title {
+        font-weight: bold;
+
+        &-capsed {
+          font-size: 1.5rem
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .mafia-helper {
+    flex-direction: column;
+
+    &__info-sidebar {
+      border-left: unset;
+      border-top: 2px solid $light-blue;
+      margin: 0 2rem;
+      padding: 1rem;
+
+      &-block {
+        padding: .3rem 0;
+      }
+    }
+  }
+}

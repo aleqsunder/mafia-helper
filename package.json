@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "gitart-vue-dialog": "^2.0.5",
+    "laravel-mix": "^6.0.43",
+    "vue": "^3.2.35",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "5.0.0",
+    "sass": "^1.52.1",
+    "sass-loader": "12.1.0",
+    "vue-loader": "^17.0.0"
+  }
+}
